@@ -114,7 +114,8 @@ NOTES AND HINTS:
  */
 int bitAnd(int x, int y) {
 
-  return 2;
+  return ~((~x) | (~y));
+
 
 }
 
@@ -132,7 +133,8 @@ int bitAnd(int x, int y) {
  */
 int bitOr(int x, int y) {
 
-  return 2;
+  return ~((~x) & (~y));
+
 
 }
 
@@ -150,7 +152,7 @@ int bitOr(int x, int y) {
  */
 int isZero(int x) {
 
-  return 2;
+  return !(x | 0);
 
 }
 
@@ -167,7 +169,7 @@ int isZero(int x) {
  */
 int minusOne(void) {
 
-  return 2;
+  return ~0;
 
 }
 
@@ -184,7 +186,7 @@ int minusOne(void) {
  */
 int tmax(void) {
 
-  return 2;
+  return (unsigned int)~(1 << 31);
 
 }
 
@@ -203,7 +205,7 @@ int tmax(void) {
  */
 int bitXor(int x, int y) {
 
-  return 2;
+  return ((x & ~y) | (~x & y));
 
 }
 
@@ -222,7 +224,7 @@ int bitXor(int x, int y) {
  */
 int getByte(int x, int n) {
 
-  return 2;
+  return (x & (0xff << (8 * n)));
 
 }
 
